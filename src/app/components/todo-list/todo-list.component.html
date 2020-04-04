@@ -1,0 +1,93 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+<div class="container">
+    <span>
+        <h2>Todo List</h2>
+    </span>
+    <span>
+        <button type="btn" class="btn" (click)="addNewTodo()">Add New ToDo</button>
+    </span>
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Name </th>
+                <th> Phone Number </th>
+                <th> Email Id </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todos; let idx = index"
+                [style.background-color]="todo.isSelected ? 'antiquewhite': ''">
+                <td>
+                    <span>
+                        {{todo.firstName+' '+todo.middleName+' '+todo.lastName}}
+                    </span>
+                    <!-- <span *ngIf="todo.isSelected">{{todo.isSelected}}</span> -->
+                </td>
+                <td>{{todo.phone}}</td>
+                <td>{{todo.email}}</td>
+                <td>
+                    <button type="btn" class="btn" (click)="viewTodo(todo, idx) ; open(mymodal);">View</button>
+                    &nbsp;
+                    <button type="btn" class="btn" (click)="openPopup(todo, idx)">View Popup</button>
+                    &nbsp;
+                    <button type="btn" class="btn" (click)="editTodo(todo)">Edit</button>
+                    &nbsp;
+                    <button type="btn" class="btn" (click)="deleteTodo(todo.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="todoViewDetail && todoViewDetail.id">
+        <p>Selected Todo-{{todoViewDetail.firstName}}</p>
+        <div>
+            <app-todo-view [todoDetail]="todoViewDetail" [itemIndex]="itemIndex" (itemSelected)="manageSelectedTodo($event, itemIndex)"></app-todo-view>
+        </div>
+    </div>
+</div>
+
+
+<button type="btn" class="btn" (click)="isValid ? isValid = false : isValid = true">Change Content</button>
+<br>
+<div *ngIf="isValid; else elseBlock">Content to render when condition is true.</div>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
+
+<br>--<br>
+
+
+<div *ngIf="isValid; then thenTemplateName else elseTemplateName">
+    Here is never showing
+</div>
+
+<ng-template #thenTemplateName>
+    If isValid is true
+</ng-template>
+
+<ng-template #elseTemplateName>
+    If isValid is false
+</ng-template>
+
+
+
+
+<h1>Angular 8 Bootstrap Modal Popup Example</h1>
+   
+<button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>
+   
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is example from ItSolutionStuff.com
+    <app-todo-view [todoDetail]="todoViewDetail" [itemIndex]="itemIndex" (itemSelected)="manageSelectedTodo($event, itemIndex)"></app-todo-view>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
