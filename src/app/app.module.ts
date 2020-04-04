@@ -9,6 +9,7 @@ import { TodoService } from './services/todo.service';
 import { HttpService } from './services/http.service';
 import { UtilService } from './services/util.service';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { TournamentComponent } from './components/tournament/tournament.component';
 // import { TournamentListComponent } from './components/tournament-list/tournament-list.component';
 // import { TodoViewComponent } from './components/todo-view/todo-view.component'
@@ -19,7 +20,8 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [
     HttpModule,

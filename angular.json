@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-todo-app-copy": {
+    "angular-webpack-demo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,14 +11,17 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/angular-todo-app-copy",
+            "customWebpackConfig": {
+              "path": "./custom-webpack.config.js"
+            },
+            "outputPath": "dist/angular-webpack-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -42,6 +45,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -61,20 +65,20 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "angular-todo-app-copy:build"
+            "browserTarget": "angular-webpack-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-todo-app-copy:build:production"
+              "browserTarget": "angular-webpack-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-todo-app-copy:build"
+            "browserTarget": "angular-webpack-demo:build"
           }
         },
         "test": {
@@ -89,6 +93,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -111,19 +117,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-todo-app-copy:serve"
+            "devServerTarget": "angular-webpack-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-todo-app-copy:serve:production"
+              "devServerTarget": "angular-webpack-demo:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular-todo-app-copy",
+  "defaultProject": "angular-webpack-demo",
   "cli": {
-    "analytics": "88f76f49-39f2-46ea-80a4-a43f1aeb7d30"
+    "analytics": "4e83f8c4-28d8-4c8a-8496-f693524c5825"
   }
 }
