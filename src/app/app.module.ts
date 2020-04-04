@@ -9,13 +9,15 @@ import { TodoService } from './services/todo.service';
 import { HttpService } from './services/http.service';
 import { UtilService } from './services/util.service';
 import { HttpModule } from '@angular/http';
+
+
 // import { TournamentComponent } from './components/tournament/tournament.component';
 // import { TournamentListComponent } from './components/tournament-list/tournament-list.component';
 // import { TodoViewComponent } from './components/todo-view/todo-view.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

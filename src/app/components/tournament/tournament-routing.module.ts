@@ -4,7 +4,7 @@ import { TournamentComponent } from './tournament.component';
 
 const routes: Routes = [
   {
-    path : 'event',
+    path : '',
     component : TournamentComponent
   }
 ];

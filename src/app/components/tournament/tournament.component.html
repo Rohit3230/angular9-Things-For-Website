@@ -1,1 +1,21 @@
-<p>tournament works!</p>
+ <div class="container-fluid text-center">  
+    <div align="center" *ngIf="mailObj && mailObj.getTournamentListAPIStatus && mailObj.getTournamentListAPIStatus == 'waiting'">
+        <img src="../../../assets/cloe-ferrara-loader1-0.gif" style="width: 100px; height: 100px;" />
+    </div>  
+    <div class="row content" *ngIf="mailObj && mailObj.getTournamentListAPIStatus && mailObj.getTournamentListAPIStatus == 'success'">
+      <div class="col-sm-2 sidenav">
+      </div>
+      <div class="col-sm-8 text-left"> 
+        <div class="panel-body"><img src="{{mailObj.data.data.tournamentGeneralInfo.fileUrl ? mailObj.data.data.tournamentGeneralInfo.fileUrl : 'https://placehold.it/150x80?text=Not Found'}}" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div>
+            <h1>About</h1>
+            <p [innerHTML]="mailObj.data.data.tournamentGeneralInfo.description"></p>
+        </div>
+        <hr>
+        <!-- <h3>Test</h3>
+        <p>Lorem ipsum...</p> -->
+      </div>
+      <div class="col-sm-2 sidenav">
+      </div>
+    </div>
+  </div>

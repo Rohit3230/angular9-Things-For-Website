@@ -1,16 +1,38 @@
-<div class="container">
+<div class="container-fluid">
     <br>
-    <div *ngIf="mailObj && mailObj.tournaments && mailObj.tournaments.length">
-        <h3>
-            Total Tournament Found:&nbsp; <b>{{mailObj.tournaments.length}}</b>
-        </h3>
-        <div class="col-lg-12">
-            <div class="col-lg-3" *ngFor="let tournament of mailObj.tournaments; let idx = index">
-                <a routerLink="/event/{{tournament.uniqueName}}">
-                    {{idx+1}}-{{tournament.name}}
-                </a>
-            </div>
-        </div>
+    <!--
+        *ngIf="mailObj && mailObj.getTournamentListAPIStatus && mailObj.getTournamentListAPIStatus == 'waiting'"
+    -->
+    <div align="center" *ngIf="mailObj && mailObj.getTournamentListAPIStatus && mailObj.getTournamentListAPIStatus == 'waiting'">
+        <img src="../../../assets/cloe-ferrara-loader1-0.gif" style="width: 100px; height: 100px;" />
     </div>
+    <!-- <div align="center"  class="row content" *ngIf="mailObj && mailObj.tournaments && mailObj.tournaments.length">
+        <h3 class="col-sm-12">
+            Total Tournament Found:&nbsp; <b>{{mailObj.tournaments.length}}</b>
+        </h3> 
+            <div class="col-sm-3" *ngFor="let tournament of mailObj.tournaments; let idx = index">
+                <a class="panel panel-default" routerLink="/event/{{tournament.uniqueName}}">
+                    <p>
+                        <img style="width: 120px;" src="{{tournament.thumbUrl}}" />
+                    </p>
+                    <p>
+                        {{tournament.name}}
+                    </p>
+                </a> 
+        </div>
+    </div> -->
+
+    <div class="container">    
+        <div class="row">
+          <div class="col-sm-4"  *ngFor="let tournament of mailObj.tournaments; let idx = index">
+            <a class="panel panel-primary" routerLink="/event" [queryParams]="{un: tournament.uniqueName}">
+              <div class="panel-heading" style="float: right;">{{tournament.service}}</div>
+              <!-- <div class="panel-heading" style="float: left;">{{tournament.organizedBy}}</div> -->
+              <div class="panel-body"><img src="{{tournament.thumbUrl ? tournament.thumbUrl : 'https://placehold.it/150x80?text=Not Found'}}" class="img-responsive" style="width:100%" alt="Image"></div>
+              <div class="panel-footer">{{tournament.name}}</div>
+            </a>
+          </div> 
+        </div>
+      </div><br>
 
 </div>

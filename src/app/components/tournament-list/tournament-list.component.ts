@@ -17,12 +17,13 @@ export class TournamentListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    debugger;
-    const url: string = this._httpService.getTournamentList(0, 10000);
+    // debugger;
+    this.mailObj.getTournamentListAPIStatus = 'waiting';
+    const url: string = this._httpService.getTournamentList(0, 6);
     let body:any={"filters":{"isOnline":true},"projectionKeys":{}};
     this._httpService.post(url, {}, body)
-      .subscribe(response => (this.mailObj.tournaments = response),
-        error => this.mailObj.errorMessage = <any>error);
+      .subscribe(response => (this.mailObj.tournaments = response, this.mailObj.getTournamentListAPIStatus = 'success'),
+        error => (this.mailObj.errorMessage = <any>error, this.mailObj.getTournamentListAPIStatus = 'failed'));
   }
 
 }

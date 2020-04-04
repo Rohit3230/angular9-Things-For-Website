@@ -6,8 +6,12 @@ const routes: Routes = [
   {
     path : "",
     // redirectTo:"todo-list",
-    redirectTo:"events",
+    redirectTo:"home",
     pathMatch: 'full'
+  },
+  {
+    path:'home',
+    loadChildren:()=> import('../app/components/home/home.module').then(m=>m.HomeModule)
   },
   {
     path:'todo-list',
@@ -24,7 +28,7 @@ const routes: Routes = [
   {
     path:'event',
     loadChildren:()=> import('../app/components/tournament/tournament.module').then(m=>m.TournamentModule)
-  },
+  }
   // {
   //   path:'event',
   //   loadChildren : '../app/components/tournament-list/tournament-list.module#TournamentListModule'
