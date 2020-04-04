@@ -1,6 +1,20 @@
-******************************************
+All importent things for make a website like:-
 
+1. Implement popup opening by sending vallue form component to popup and popup to component.
+2. Implememt code for input/output decorators.
+3. Implement code for Integrating https api binding with observable.
+4. Implement code for multiple moduel  integration on behalf of routing for lazy load functionality.
+5. Implement code for writing service with get/set methods.
+6. Implement code for proper code structuring for webapp.
+7. 
+
+
+
+**********************************************************************************
+          SOME INFO. ABOUT FUNCTIOALITY INTREGATING
+**********************************************************************************
 Steps for add alert popup code:-
+
 Install 
 npm install --save @ng-bootstrap/ng-bootstrap
 
@@ -43,9 +57,8 @@ closeResult: string;
     }
   }
 
-  *******************************************
-
-  angularcli commands:-
+*******************************************
+angularcli commands:-
 
 Add new service:-
 ng generate service services/httpService 
@@ -56,5 +69,4 @@ ng generate component components/tournamentList
 add new module with routing:-
 ng generate module components/tournament-list --routing     // module name: TournamentListModule      // routing file name:  TournamentListRoutingModule
 
-
-  *******************************************
+*******************************************
