@@ -3,6 +3,8 @@ All importent things for make a website like:-
 1. Implement popup opening by sending vallue form component to popup and popup to component.
 2. Implememt code for input/output decorators.
 3. Implement code for Integrating https api binding with observable.
+     Best source for learging about orbservable:-
+     https://angular.io/guide/observables
 4. Implement code for multiple moduel  integration on behalf of routing for lazy load functionality.
 5. Implement code for writing service with get/set methods.
 6. Implement code for proper code structuring for webapp.
