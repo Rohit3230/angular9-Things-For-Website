@@ -9,6 +9,7 @@ import { TodoService } from './services/todo.service';
 import { HttpService } from './services/http.service';
 import { UtilService } from './services/util.service';
 import { HttpModule } from '@angular/http';
+// import { CalculatorComponent } from './components/calculator/calculator.component';
 
 
 // import { TournamentComponent } from './components/tournament/tournament.component';
@@ -17,7 +18,7 @@ import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

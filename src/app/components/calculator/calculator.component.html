@@ -1,0 +1,51 @@
+
+<div classs="containor">
+    
+    <div class="container">
+        <h2>Simple Calculator</h2>
+        <br><br><br><br>
+        <table class="table">
+          <tbody>
+            <tr>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td><button type="btn" class="btn btn-danger" (click)="clearAll()">Clear</button></td>
+              </tr>
+            <tr>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td><button type="btn" class='btn btn-info' (click)="setAction('/')">/</button></td>
+              </tr>
+            <tr>
+              <td > <button type="btn" class='btn btn-primary' (click)="setInput(7)">7</button></td>
+              <td ><button type="btn" class='btn btn-primary' (click)="setInput(8)">8</button></td>
+              <td> <button type="btn" class='btn btn-primary' (click)="setInput(9)">9</button></td>
+              <td><button type="btn" class='btn btn-info' (click)="setAction('*')">*</button></td>
+            </tr>
+            <tr>
+                <td > <button type="btn" class='btn btn-primary' (click)="setInput(4)">4</button></td>
+                <td ><button type="btn" class='btn btn-primary' (click)="setInput(5)">5</button></td>
+                <td> <button type="btn" class='btn btn-primary' (click)="setInput(6)">6</button></td>
+                <td><button type="btn" class='btn btn-info' (click)="setAction('+')">+</button></td>
+            </tr>
+            <tr>
+                <td > <button type="btn" class='btn btn-primary' (click)="setInput(1)">1</button></td>
+                <td ><button type="btn" class='btn btn-primary' (click)="setInput(2)">2</button></td>
+                <td> <button type="btn" class='btn btn-primary' (click)="setInput(3)">3</button></td>
+                <td><button type="btn" class='btn btn-info' (click)="setAction('-')">-</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td > <button type="btn" class='btn btn-primary' (click)="setInput(0)">0</button></td>
+                <td><button type="btn" class='btn btn-primary' (click)="setInput('.')">.</button></td>
+                <td><button type="btn" class='btn btn-success'  (click)="actionOperation()">=</button></td>
+              </tr> 
+          </tbody>
+        </table>
+        <h2>
+            {{actionArr[0]}}  {{actionMode}}   {{actionArr[1]}} &nbsp; {{actionMode && actionArr[0] != null && actionArr[1] != null ? '=' : ''}} &nbsp; {{outPut != null ? outPut : ''}}
+          </h2> 
+      </div>  
+</div>

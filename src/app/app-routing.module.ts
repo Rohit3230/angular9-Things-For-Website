@@ -6,12 +6,16 @@ const routes: Routes = [
   {
     path : "",
     // redirectTo:"todo-list",
-    redirectTo:"home",
+    redirectTo:"calculator",
     pathMatch: 'full'
   },
   {
     path:'home',
     loadChildren:()=> import('../app/components/home/home.module').then(m=>m.HomeModule)
+  },
+  {
+    path:'calculator',
+    loadChildren:()=> import('../app/components/calculator/calculator.module').then(m=>m.CalculatorModule)
   },
   {
     path:'todo-list',
