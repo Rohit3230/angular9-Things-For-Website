@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path : "",
     // redirectTo:"todo-list",
-    redirectTo:"calculator",
+    redirectTo:"home",
     pathMatch: 'full'
   },
   {

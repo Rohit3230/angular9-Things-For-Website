@@ -70,3 +70,13 @@ add new module with routing:-
 ng generate module components/tournament-list --routing     // module name: TournamentListModule      // routing file name:  TournamentListRoutingModule
 
 *******************************************
+
+## Deploy code on git pages
+Step 1:-
+ng build --prod --output-path docs --base-href https://rohit3230.github.io/angularIMPThingsForWebApp/
+
+Step 2:-
+check docs folder created or not. like dist folder.
+
+Step 3:-
+ngh --dir=docs
