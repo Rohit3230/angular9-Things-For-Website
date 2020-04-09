@@ -20,21 +20,21 @@ export class TodoService{
                     id: 1,
                     title: 'Prof.',
                     salution: 'Mr.',
-                    firstName: 'Mark',
-                    middleName: 'Jacob',
-                    lastName: 'Otto',
-                    phone: '1234567890',
-                    email: 'mark_otto@gmail.com'
+                    firstName: 'Rohit',
+                    middleName: 'Singh',
+                    lastName: 'Niranjan',
+                    phone: '9098383230',
+                    email: 'rsn3230@gmail.com'
                 },
                 {
                     id: 2,
                     title: 'Dr.',
                     salution: 'Mr.',
-                    firstName: 'Jacob',
-                    middleName: 'Mark',
-                    lastName: 'Thornton',
-                    phone: '0987654321',
-                    email: 'jacob_thornton@gmail.com'
+                    firstName: 'Mohit',
+                    middleName: 'Singh',
+                    lastName: 'Niranjan',
+                    phone: '7503912321',
+                    email: 'rohit@yogems.com'
                 }
             ];
             localStorage.setItem('localData', JSON.stringify(todoArrayData));

@@ -1,9 +1,26 @@
-<p>todo-view works!</p>
+
 <div class="col-lg-12">
-    INPUT:&nbsp;<input type="text" class="form-control" #firstName="ngModel" name="firstName" [(ngModel)]="todoDetail.firstName" placeholder="Enter First Name" required />
-    ID: {{todoDetail.id}}<br>
-    Name: {{todoDetail.firstName+' '+todoDetail.middleName+' '+todoDetail.lastName}}<br>
-    Phone: {{todoDetail.phone}}<br>
-    Email: {{todoDetail.email}}<br>
-    <button type="btn" class="btn" (click)="selectForClass(todoDetail, itemIndex)">Select</button>
+    <table class="table" style="font-size: 16px; font-family: inherit;"> 
+        <thead>
+            <tr>
+                <th> Name </th>
+                <th> Phone Number </th>
+                <th> Email Id </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    {{todoDetail.firstName+' '+todoDetail.middleName+' '+todoDetail.lastName}}
+                </td> 
+                <td>{{todoDetail.phone}}</td> 
+                <td>{{todoDetail.email}}</td> 
+                <td>
+                    <button *ngIf="todoDetail" type="btn" class="btn btn-info" (click)="selectForClass(todoDetail, itemIndex)">{{todoDetail && todoDetail.isSelected ? 'Remove Foucs From Listing' : 'Add Focus In Listing'}}</button>
+                </td> 
+            </tr>
+        </tbody>
+    </table>    
+    <!-- <input *ngIf="todoDetail.isSelected" type="text" class="form-control" #phone="ngModel" name="phone" [(ngModel)]="todoDetail.phone" placeholder="Enter Phone Number" /> -->
 </div>

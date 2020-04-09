@@ -26,6 +26,21 @@ body {
   h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
   }
+
+  .btn-default {
+    color: white;
+    background: gray;
+  }
+
+  .label{
+    padding-top: 20px;
+    font-size: 15px;
+    font-weight: 900;
+  }
+  .pageTitle{
+    font-size: 30px;
+    font-weight: bolder;
+}
   
   /*--------------------------------------------------------------
   # Back to top button

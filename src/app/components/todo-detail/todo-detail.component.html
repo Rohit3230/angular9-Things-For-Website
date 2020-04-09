@@ -1,10 +1,17 @@
+<main id="main" style="    margin-top: 70px;">
+    &nbsp;
+  </main>
 <div class="container">
+    <span class="col-lg-12 pageTitle" >
+        {{mode == 'Edit' ? 'Update Existing Todo Item' : 'Add New Todo Item'}}
+    </span>
+    
     <div class="col-lg-12">
         <form id="todoForm" #todoForm="ngForm" (ngSubmit)="onToDoSubmitForm(todoForm)" novalidat>
             <div class="col-lg-12">
-                <div class="col-lg-4">
+                <label class="col-lg-4 label">
                     First Name
-                </div>
+                </label>
                 <div class="col-lg-12">
                     <input type="text" class="form-control" #firstName="ngModel" name="firstName" [(ngModel)]="todoDetail.firstName" placeholder="Enter First Name" required />
                     <div [hidden]="firstName.valid || (firstName.pristine && !todoForm.submitted)" class="text-danger">
@@ -22,9 +29,9 @@
                 </div>
             </div> -->
             <div class="col-lg-12">
-                <div class="col-lg-4">
+                <label class="col-lg-4 label">
                     Middle Name
-                </div>
+                </label>
                 <div class="col-lg-12">
                     <input type="text" class="form-control" #middleName="ngModel" name="middleName" [(ngModel)]="todoDetail.middleName" placeholder="Enter Middle Name" required />
                     <div [hidden]="middleName.valid || (middleName.pristine && !todoForm.submitted)" class="text-danger">
@@ -33,9 +40,9 @@
                 </div>
             </div>
             <div class="col-lg-12">
-                <div class="col-lg-4">
+                <label class="col-lg-4 label">
                     Last Name
-                </div>
+                </label>
                 <div class="col-lg-12">
                     <input type="text" class="form-control" #lastName="ngModel" name="lastName" [(ngModel)]="todoDetail.lastName" placeholder="Enter Last Name" required />
                     <div [hidden]="lastName.valid || (lastName.pristine && !todoForm.submitted)" class="text-danger">
@@ -44,9 +51,9 @@
                 </div>
             </div>
             <div class="col-lg-12">
-                <div class="col-lg-4">
+                <label class="col-lg-4 label">
                     Phone Number
-                </div>
+                </label>
                 <div class="col-lg-12">
                     <input type="number" class="form-control" #phone="ngModel" name="phone" [(ngModel)]="todoDetail.phone" placeholder="Enter Phone Number" required />
                     <div [hidden]="phone.valid || (phone.pristine && !todoForm.submitted)" class="text-danger">
@@ -55,9 +62,9 @@
                 </div>
             </div>
             <div class="col-lg-12">
-                <div class="col-lg-4">
+                <label class="col-lg-4 label">
                     Email Id
-                </div>
+                </label>
                 <div class="col-lg-12">
                     <!-- <input type="email" class="form-control" #email="ngModel" name="email" [(ngModel)]="todoDetail.email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required> -->
                     <input type="text" class="form-control" #email="ngModel" name="email" [(ngModel)]="todoDetail.email" placeholder="Enter Email Id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
@@ -67,10 +74,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12" align="right">
-                    <button type="submit" class="btn">Save</button>
+            <div class="col-lg-12" align="right" style="margin-top: 10px; padding-right: 30px;">
+                    <button type="submit" class="btn btn-success">Save</button>
                     &nbsp;
-                    <button type="btn" class="btn" (click)="cancle()">Cancle</button>
+                    <button type="btn" class="btn btn-default" (click)="cancle()">Cancle</button>
                     <!-- <br>
                     <p *ngIf="todoDetail && todoDetail.status" [innerHtml]="todoDetail.status"></p> -->
             </div>

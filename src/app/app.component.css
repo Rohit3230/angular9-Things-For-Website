@@ -50,9 +50,13 @@
     opacity: 0.8;
   }
 
+  .mainContainer {
+    margin: 82px auto 32px !important;
+  }
+
   .content {
     display: flex;
-    margin: 82px auto 32px;
+    /* margin: 82px auto 32px; */
     padding: 0 16px; 
     flex-direction: column;
     /* align-items: center; **/

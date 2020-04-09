@@ -1,14 +1,24 @@
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-<div class="container">
-    <span>
-        <h2>Todo List</h2>
+<!-- <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="container text-center text-md-left" data-aos="fade-up">
+      <h1>Welcome to <span>Lumia</span></h1>
+      <h2>We are team of talanted designers making websites with Bootstrap</h2>
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section> -->
+  <main id="main" style="    margin-top: 70px;">
+    &nbsp;
+  </main>
+<div class="container mainContainer">
+    <span class="col-lg-6 pageTitle" >
+        Todo List
     </span>
-    <span>
-        <button type="btn" class="btn" (click)="addNewTodo()">Add New ToDo</button>
+    <span class="col-lg-6">
+        <button type="btn" class="btn btn-info" style="float:right; margin-bottom: 10px;" (click)="addNewTodo()">Add New ToDo</button>
     </span>
-    <table class="table">
+    <table class="table" style="font-size: 16px; font-family: inherit;"> 
         <thead>
             <tr>
                 <th> Name </th>
@@ -29,26 +39,27 @@
                 <td>{{todo.phone}}</td>
                 <td>{{todo.email}}</td>
                 <td>
-                    <button type="btn" class="btn" (click)="viewTodo(todo, idx) ; open(mymodal);">View</button>
+                    <button type="button" class="btn btn-default" (click)="viewTodo(todo, idx) ; open(mymodal);">View</button>
                     &nbsp;
-                    <button type="btn" class="btn" (click)="openPopup(todo, idx)">View Popup</button>
+                    <!-- <button type="btn" class="btn btn-default" (click)="openPopup(todo, idx)">View Popup</button>
+                    &nbsp; -->
+                    <button type="btn" class="btn btn-default" (click)="editTodo(todo)">Edit</button>
                     &nbsp;
-                    <button type="btn" class="btn" (click)="editTodo(todo)">Edit</button>
-                    &nbsp;
-                    <button type="btn" class="btn" (click)="deleteTodo(todo.id)">Delete</button>
+                    <button type="btn" class="btn btn-danger" (click)="deleteTodo(todo.id)">Delete</button>
                 </td>
             </tr>
         </tbody>
     </table>
-    <div *ngIf="todoViewDetail && todoViewDetail.id">
+    <!-- <div *ngIf="todoViewDetail && todoViewDetail.id">
         <p>Selected Todo-{{todoViewDetail.firstName}}</p>
         <div>
             <app-todo-view [todoDetail]="todoViewDetail" [itemIndex]="itemIndex" (itemSelected)="manageSelectedTodo($event, itemIndex)"></app-todo-view>
         </div>
-    </div>
+    </div> -->
 </div>
 
 
+<!-- 
 <button type="btn" class="btn" (click)="isValid ? isValid = false : isValid = true">Change Content</button>
 <br>
 <div *ngIf="isValid; else elseBlock">Content to render when condition is true.</div>
@@ -67,24 +78,23 @@
 
 <ng-template #elseTemplateName>
     If isValid is false
-</ng-template>
+</ng-template> -->
 
 
 
 
-<h1>Angular 8 Bootstrap Modal Popup Example</h1>
+<!-- <h1>Angular 8 Bootstrap Modal Popup Example</h1>
    
 <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>
-   
+    -->
 <ng-template #mymodal let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    <h4 class="modal-title" id="modal-basic-title">Abut Todo Item</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">×</span>
     </button>
   </div>
   <div class="modal-body">
-    This is example from ItSolutionStuff.com
     <app-todo-view [todoDetail]="todoViewDetail" [itemIndex]="itemIndex" (itemSelected)="manageSelectedTodo($event, itemIndex)"></app-todo-view>
   </div>
   <div class="modal-footer">
