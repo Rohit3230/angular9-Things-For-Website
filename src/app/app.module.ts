@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +10,7 @@ import { TodoService } from './services/todo.service';
 import { HttpService } from './services/http.service';
 import { UtilService } from './services/util.service';
 import { HttpModule } from '@angular/http';
+import { HeaderComponent } from './components/header/header.component';
 // import { CalculatorComponent } from './components/calculator/calculator.component';
 
 
@@ -18,7 +20,8 @@ import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
