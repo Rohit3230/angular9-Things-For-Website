@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-
+    debugger;
     // Smooth scroll for the navigation menu and links with .scrollto classes
     $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
        
@@ -70,7 +70,7 @@ export class HeaderComponent implements OnInit {
         class: 'mobile-nav d-lg-none'
       });
       $('body').append($mobile_nav);
-      $('body').prepend('<button type="button" style="z-index: auto;" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
+      $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
       $('body').append('<div class="mobile-nav-overly"></div>');
   
       $(document).on('click', '.mobile-nav-toggle', function(e) {
