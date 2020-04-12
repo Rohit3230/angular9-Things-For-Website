@@ -1,4 +1,8 @@
-All importent things for make a website like:-
+##  Demo Url:-
+https://rohit3230.github.io/angular9-Things-For-Website/
+
+
+##  All importent things for make a website like:-
 
 1. Implement popup opening by sending vallue form component to popup and popup to component.
 2. Implememt code for input/output decorators.
@@ -6,14 +10,14 @@ All importent things for make a website like:-
 4. Implement code for multiple moduel  integration on behalf of routing for lazy load functionality.
 5. Implement code for writing service with get/set methods.
 6. Implement code for proper code structuring for webapp.
-7. 
 
 
 
-**********************************************************************************
-          SOME INFO. ABOUT FUNCTIOALITY INTREGATING
-**********************************************************************************
-Steps for add alert popup code:-
+##  **********************************************************************************
+##            SOME INFO. ABOUT FUNCTIOALITY INTREGATING
+##  **********************************************************************************
+
+##  Steps for add alert popup code:-
 
 Install 
 npm install --save @ng-bootstrap/ng-bootstrap
@@ -58,7 +62,7 @@ closeResult: string;
   }
 
 *******************************************
-angularcli commands:-
+##  angularcli commands:-
 
 Add new service:-
 ng generate service services/httpService 
@@ -73,7 +77,7 @@ ng generate module components/tournament-list --routing     // module name: Tour
 
 ## Deploy code on git pages
 Step 1:-
-ng build --prod --output-path docs --base-href https://rohit3230.github.io/angularIMPThingsForWebApp/
+ng build --prod --output-path docs --base-href https://rohit3230.github.io/angular9-Things-For-Website/
 
 Step 2:-
 check docs folder created or not. like dist folder.
