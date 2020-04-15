@@ -32,6 +32,14 @@ const routes: Routes = [
   {
     path:'event',
     loadChildren:()=> import('../app/components/tournament/tournament.module').then(m=>m.TournamentModule)
+  },
+  {
+    path:'custom-pipes',
+    loadChildren:()=> import ('../app/components/custom-pipes/custom-pipes.module').then(m=>m.CustomPipesModule)
+  },
+  {
+    path : 'ng-content',
+    loadChildren:()=> import ('../app/components/ng-content/ng-content.module').then(m=>m.NgContentModule)
   }
   // {
   //   path:'event',

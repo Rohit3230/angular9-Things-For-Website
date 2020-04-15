@@ -1,0 +1,50 @@
+<main id="main" style="    margin-top: 70px;">
+    &nbsp;
+</main>
+
+<div class="container-fluid">
+    <div class="container">
+        <h2> Custom Pipes Examples: </h2>
+        <div class="col-sm-12 pipeExample">
+            <h3> 1. Simplest Pipe Example <b> without </b> paramter: </h3>
+            <div>
+                Square of {{valueForSquare}} = <b>{{ valueForSquare | square }}</b>
+            </div>
+            <!-- <div>
+                Syntex: <small>{{ "valueForSquare" | "square" }}</small>
+              </div> -->
+        </div>
+        <div class="col-sm-12 pipeExample">
+            <h3> 2. Pipe Example with <b>one</b> paramter: </h3>
+            <div>
+                {{valueForPower}} Power of {{valueForSquare}} Like {{valueForSquare}}<sup>{{valueForPower}}</sup> =
+                {{ valueForSquare | power : valueForPower }}
+            </div>
+        </div>
+        <div class="col-sm-12 pipeExample">
+            <h3> 3. Pipe Example with <b>optional</b> paramter: </h3>
+            <div>
+                {{valueForSquare}}<sup> DEFAULT PARAM i.e.. 3</sup> = {{ valueForSquare | power  }}
+            </div>
+        </div>
+        <div class="col-sm-12 pipeExample">
+            <h3> 4. Pipe Example with <b>multiple</b> paramter: </h3>
+            <div>
+                {{valueForPower}} Power of {{valueForSquare}} + 20 Like ({{valueForSquare}}<sup>{{valueForPower}}</sup> + 20) = {{ valueForSquare | powerWithMultiParams : valueForPower : 20}}
+            </div>
+        </div>
+        <div class="col-sm-12 pipeExample">
+            <h3> 5. Pipe Example with <b>variable number of</b> arguments: </h3>
+            <div class="pipesWithNumOfArgs">
+                //No parameter 
+                <p>{{ "Arun" | userFullName }}</p>   
+
+                // One parameter
+                <p>{{ "Arun" | userFullName :"kumar"}}</p>    
+
+                // two parameter
+                <p>{{ "Arun" | userFullName : "kumar" : "gudelli" }}</p>  
+            </div>
+        </div>
+    </div>
+</div>

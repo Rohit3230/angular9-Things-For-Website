@@ -11,12 +11,6 @@ import { HttpService } from './services/http.service';
 import { UtilService } from './services/util.service';
 import { HttpModule } from '@angular/http';
 import { HeaderComponent } from './components/header/header.component';
-// import { CalculatorComponent } from './components/calculator/calculator.component';
-
-
-// import { TournamentComponent } from './components/tournament/tournament.component';
-// import { TournamentListComponent } from './components/tournament-list/tournament-list.component';
-// import { TodoViewComponent } from './components/todo-view/todo-view.component'
 
 @NgModule({
   declarations: [
@@ -33,6 +27,11 @@ import { HeaderComponent } from './components/header/header.component';
     HttpService,
     UtilService,
   ],
+  // exports : [
+  //   AppComponent,
+  //   HeaderComponent,
+  //   SquarePipe
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
