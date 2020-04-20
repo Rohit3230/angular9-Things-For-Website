@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 const routes: Routes = [
@@ -31,7 +32,8 @@ const routes: Routes = [
   },
   {
     path:'event',
-    loadChildren:()=> import('../app/components/tournament/tournament.module').then(m=>m.TournamentModule)
+    loadChildren:()=> import('../app/components/tournament/tournament.module').then(m=>m.TournamentModule),
+    canLoad: [ AuthGuardService ]
   },
   {
     path:'custom-pipes',
@@ -44,6 +46,18 @@ const routes: Routes = [
   {
     path : 'gameList',
     loadChildren:()=> import ('../app/components/game-listing/game-listing.module').then(m=>m.GameListingModule)
+  },
+  {
+    path : "practice",
+    loadChildren:()=> import('../app/components/practice/practice.module').then(m=>m.PracticeModule)
+  },
+  {
+    path : "login",
+    loadChildren:()=>import('../app/components/login/login.module').then(m=>m.LoginModule)
+  },
+  {
+    path : "register",
+    loadChildren:()=>import('../app/components/register/register.module').then(m=>m.RegisterModule)
   }
   // {
   //   path:'event',

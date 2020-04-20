@@ -13,6 +13,10 @@ export class HeaderComponent implements OnInit {
     private router: Router
   ) { }
 
+  changeUrl(url : string){
+    this.router.navigate([url]);
+  }
+
   onLogout() {
     this.router.navigate(['']);
   }
