@@ -40,6 +40,10 @@ const routes: Routes = [
   {
     path : 'ng-content',
     loadChildren:()=> import ('../app/components/ng-content/ng-content.module').then(m=>m.NgContentModule)
+  },
+  {
+    path : 'gameList',
+    loadChildren:()=> import ('../app/components/game-listing/game-listing.module').then(m=>m.GameListingModule)
   }
   // {
   //   path:'event',

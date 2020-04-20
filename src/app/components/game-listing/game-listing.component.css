@@ -1,0 +1,21 @@
+.gameContent{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: #e6e3e3;
+    margin-left: 10px;
+}
+
+.searchBy{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    /* margin-right: 10px; */
+    /* background-color: #e6e3e3; */
+    margin-left: -21px;
+}
+
+.filterOption{
+    padding-top: 20px;
+}
