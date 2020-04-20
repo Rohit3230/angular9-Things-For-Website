@@ -4,13 +4,13 @@
   </main>
 <div class="container-fluid">
     <br> 
-    <div align="center" *ngIf="mailObj && mailObj.getGameListAPIStatus && mailObj.getGameListAPIStatus == 'waiting'">
+    <div align="center" *ngIf="mainObj && mainObj.getGameListAPIStatus && mainObj.getGameListAPIStatus == 'waiting'">
         <img src="../../../assets/cloe-ferrara-loader1-0.gif" style="width: 100px; height: 100px;" />
     </div>
  
 
     <div class="container">    
-        <div class="col-lg-10 searchBy border border-dark" *ngIf="mailObj.gameList">
+        <div class="col-lg-10 searchBy border border-dark" *ngIf="mainObj.gameList">
             <input type="text" class="form-control" [(ngModel)]="searchBy" (ngModelChange)="searchNow($event)" placeholder="Search By Title" />
             <div class="col-lg-12 filterOption" >
                 Filter your list by following order. 
@@ -23,15 +23,15 @@
             </div>
         </div>
 
-        <h2 *ngIf="mailObj.gameList && !searchBy">
-            <b>Total Game Recods : </b>{{mailObj.gameList.length}}
+        <h2 *ngIf="mainObj.gameList && !searchBy">
+            <b>Total Game Recods : </b>{{mainObj.gameList.length}}
         </h2>
-        <h2 *ngIf="mailObj.gameList && searchBy">
-            <b>Filtered Game Recods : </b>{{mailObj.gameList.length}}
+        <h2 *ngIf="mainObj.gameList && searchBy">
+            <b>Filtered Game Recods : </b>{{mainObj.gameList.length}}
         </h2>
         <div class="row">
             
-          <div class="col-sm-3 gameContent" align="left"  *ngFor="let gameObj of mailObj.gameList; let idx = index">
+          <div class="col-sm-3 gameContent" align="left"  *ngFor="let gameObj of mainObj.gameList; let idx = index">
             <a class="panel panel-primary" routerLink="/gameList" [queryParams]="{un: gameObj.url}">
                 <div class="panel-heading" ><b>Title:&nbsp;</b>{{gameObj.title}}</div> 
             </a>

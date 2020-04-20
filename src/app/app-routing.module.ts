@@ -33,7 +33,7 @@ const routes: Routes = [
   {
     path:'event',
     loadChildren:()=> import('../app/components/tournament/tournament.module').then(m=>m.TournamentModule),
-    canLoad: [ AuthGuardService ]
+    // canLoad: [ AuthGuardService ]
   },
   {
     path:'custom-pipes',
